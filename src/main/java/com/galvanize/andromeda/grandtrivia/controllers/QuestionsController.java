@@ -1,11 +1,15 @@
 package com.galvanize.andromeda.grandtrivia.controllers;
 
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api/v1/grandtrivia/questions")
+@Api(tags = {"questions"})
 public class QuestionsController {
 
-    @GetMapping("/api/v1/grandtrivia/questions")
+    @GetMapping
     public void getQuestions() {}
 }

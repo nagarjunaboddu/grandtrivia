@@ -3,11 +3,11 @@
 
 | URI | Method | Status| Description |
 |-----|--------|-------|-------------|
-|/grandtrivia/questions|GET|200|Get list of all questions and answers|
+|/api/v1/grandtrivia/questions|GET|200|Get list of all questions and answers|
 
 ### **Sample Request and Response**
 
-GET /grandtrivia/questions
+GET /api/v1/grandtrivia/questions
 ````
 Response:
 [

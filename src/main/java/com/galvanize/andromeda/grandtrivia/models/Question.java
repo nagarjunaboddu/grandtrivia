@@ -5,10 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.sql.Date;
+
 
 @Data
 @AllArgsConstructor
@@ -22,4 +21,15 @@ public class Question {
     private long id;
 
     private String question;
+
+    @Column(name = "question_number")
+    private Long questionNumber;
+
+    @Column(name = "quiz_id")
+    private Long quizId;
+
+    @Column(name = "created_at")
+    private String createdAt;
+
+
 }

@@ -23,6 +23,12 @@ public class QuestionsControllerIntegrationTests {
         mockMvc.perform(get("/api/v1/grandtrivia/questions"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$").exists())
-                .andExpect(jsonPath("$.length()").value(1));
+                .andExpect(jsonPath("$.length()").value(1))
+                .andExpect(jsonPath("$.[0].id").exists())
+                .andExpect(jsonPath("$.[0].question").value("What did Yankee Doodle stick in his cap?"))
+                .andExpect(jsonPath("$.[0].questionNumber").value(1))
+                .andExpect(jsonPath("$.[0].quizId").value(1))
+                .andExpect(jsonPath("$.[0].createdAt").value("2018-02-02 20:04:25"));
+
     }
 }

@@ -6,9 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.List;
 
 
 @Data
@@ -36,6 +35,10 @@ public class Question {
     @Column(name = "created_at")
     @JsonProperty("timestamp")
     private String createdAt;
+
+    @OneToMany(mappedBy="question",fetch=FetchType.LAZY,
+            cascade=CascadeType.ALL)
+    private List<Answer> answers;
 
 
 }

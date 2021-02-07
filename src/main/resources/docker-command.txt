@@ -1,0 +1,8 @@
+
+
+docker run --name grandtrivia-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
+
+docker run -p 3307:3306 -dit --name grandtrivia-mysql -e MYSQL_ROOT_PASSWORD=password mysql
+
+
+docker run -p 3307:3306 -dit --name grandtrivia-mysql -v triviavolume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -d --rm mysql

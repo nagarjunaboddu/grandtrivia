@@ -1,0 +1,25 @@
+version: "3"
+services:
+  grandtrivia-mysql:
+    image: mysql
+    volumes:
+      - triviavolume:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: grandtrivia
+    ports:
+      - "3307:3306"
+  grandtrivia:
+    build: .
+    environment:
+      DB_HOST: grandtrivia-mysql
+      DB_USER: root
+      DB_PASSWORD: password
+      DB_NAME: grandtrivia
+    depends_on:
+      - grandtrivia-mysql
+    ports:
+      - "8300:8200"
+
+volumes:
+  triviavolume: {}

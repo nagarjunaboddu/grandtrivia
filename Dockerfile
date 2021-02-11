@@ -4,6 +4,7 @@
 FROM openjdk:11.0-jdk-slim as builder
 VOLUME /tmp
 COPY . .
+RUN chmod +x ./gradlew
 RUN ./gradlew build
 
 # Stage 2: Run JRE for the .jar
